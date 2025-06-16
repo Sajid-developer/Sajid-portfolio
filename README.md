@@ -5,4 +5,4 @@
 
 ## 📷 Screenshot
 
-![Portfolio](images/Sajid_professional.jpg)
+![Portfolio](images/screenshot.png)
