@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sajid Alam | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #02030e, #060729);
+      color: #fff;
+      line-height: 1.6;
+      transition: 0.3s ease;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.7rem 4rem;
+      background-color: rgba(170, 224, 255, 0.2);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgb(72, 122, 154);
+    }
+
+    nav .logo {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #00f2fe;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      transition: color 0.3s ease;
+      font-weight: 500;
+    }
+
+    nav ul li a:hover {
+      color: #00f2fe;
+    }
+
+    header {
+      padding: 4.4rem 2rem 2rem;
+      text-align: center;
+    }
+
+    header img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      padding: 5px;
+      border-radius: 50%;
+      border: 3px solid #00f2fe;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+    }
+
+    .subtitle {
+      color: #00f2fe;
+      font-weight: 300;
+    }
+
+    section {
+      margin: -2rem auto;
+      padding: 4rem 2rem;
+      max-width: 1000px;
+    }
+
+    .skills span {
+      display: inline-block;
+      background: rgba(0, 242, 254, 0.2);
+      border: 1px solid #00f2fe;
+      color: #00f2fe;
+      padding: 0.5rem 1.4rem;
+      border-radius: 20px;
+      margin: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    .project-card {
+      background-color: #1b2b34;
+      border-radius: 10px;
+      padding: 2rem;
+      margin-top: 1rem;
+      transition: transform 0.3s ease;
+    }
+
+    .project-card p {
+      margin: 1rem 0;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      background-color: #223a45;
+    }
+
+    .socials {
+      display: flex;
+      /* justify-content: center; */
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .socials a {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(0, 242, 254, 0.2);
+      border: 2px solid #00f2fe;
+      border-radius: 50%;
+      color: #00f2fe;
+      font-weight: bold;
+      transition: background-color 0.3s, transform 0.3s;
+      text-decoration: none;
+    }
+
+    .socials a:hover {
+      background-color: #00f2fe;
+      color: #000;
+      transform: scale(1.1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid #00f2fe;
+    }
+
+    .sitemap {
+      margin-top: 1rem;
+    }
+
+    .sitemap a {
+      margin: 0 0.5rem;
+      color: #00f2fe;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .sitemap a:hover {
+      text-decoration: underline;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    input,
+    textarea {
+      padding: 0.8rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #1b2b34;
+      color: #fff;
+      resize: none;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #ccc;
+    }
+
+    button {
+      padding: 0.8rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #00f2fe;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #00d9e6;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background-color: #00f2fe;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        padding: 0.7rem 1.7rem;
+      }
+
+      nav ul {
+        width: 96%;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 50%;
+        transform: translate(-50%, 20px);
+        opacity: 0;
+        visibility: hidden;
+        background-color: rgba(41, 103, 139, 0.9);
+        backdrop-filter: blur(5px);
+        padding: 1.3rem 2rem;
+        border-radius: 8px;
+        transition: 0.3s ease;
+      }
+
+      nav ul.show {
+        transform: translate(-50%, 0px);
+        visibility: visible;
+        opacity: 1;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    #about p{
+      margin-top: 10px;
+      font-weight: 300;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="logo">Sajid.dev</div>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul id="menu">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header id="home">
+    <img src="./Sajid_professional.jpg" alt="Sajid Alam" />
+    <h1>Sajid Alam</h1>
+    <p class="subtitle">Full Stack and Frontend Developer</p>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p style="color: aqua;"><strong>I don’t just code applications - I bring ideas to life. 💭</strong></p>
+
+      <p>I'm a passionate Full Stack and Frontend Developer with 1+ year of experience building pixel-perfect, modern,
+      responsive, and highly optimized web applications. I'm specialized in Angular, React, JavaScript, Tailwind CSS,
+      HTML, CSS, TypeScript and REST APIs.</p>
+
+     <p> I'm committed to translating complex UI/UX designs into fully functional, scalable solutions. My work consistently
+      meets quality, performance, or design precision.
+
+      I would take pride in writing clean, reusable code and turning ideas into high-impact digital experiences.
+      Whether working independently or collaborating across teams remotely, I bring energy & innovation.</p>
+
+      <p style="text-align: right; margin-top: 20px;">- Thanks for Visiting My Profile 🙏🏻</p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>JavaScript</span>
+      <span>Angular</span>
+      <span>Figma</span>
+      <span>NPM</span>
+      <span>Git & GitHub</span>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-card">
+      <h3>Quiz Game Application</h3>
+      <p>🎯 Challenge your brain, beat the clock, and rise to the top — the ultimate quiz battle begins now!</p>
+      <a href="https://github.com/Sajid-developer/Quiz-game-application" target="_blank" style="color: #00f2fe;">View
+        Project</a>
+    </div>
+  </section>
+
+  <section id="connect">
+    <h2>Connect with Me</h2>
+    <div class="socials">
+      <a href="https://github.com/Sajid-developer" target="_blank">GH</a>
+      <a href="https://www.linkedin.com/in/sajid-developer/" target="_blank">IN</a>
+      <a href="https://www.instagram.com/sajid.developer/" target="_blank">IG</a>
+      <a href="https://x.com/SajidDeveloper" target="_blank">X</a>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:sajid.developerr@gmail.com" style="color: #00f2fe;">sajid.developerr@gmail.com</a></p>
+    <p>Phone: 9135858103</p>
+    <form action="#" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <input type="text" name="subject" placeholder="Subject" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Sajid Alam. All rights reserved.</p>
+    <div class="sitemap">
+      <a href="#about">About</a>|
+      <a href="#skills">Skills</a>|
+      <a href="#projects">Projects</a>|
+      <a href="#connect">Connect</a>|
+      <a href="#contact">Contact</a>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.classList.toggle('show');
+    }
+  </script>
+
+</body>
+</html>
