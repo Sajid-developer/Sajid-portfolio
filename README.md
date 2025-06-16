@@ -1,2 +1,2 @@
 # My Portfolio Website
-👨🏼‍💻 My portfolio website using HTML, CSS &amp; JavaScript.
+👨🏼‍💻 An awesome looking portfolio website using HTML, CSS & JavaScript.
