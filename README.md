@@ -1,5 +1,5 @@
 # My Portfolio Website
-👨🏼‍💻 A sleek modern looking portfolio website using HTML, CSS & JavaScript.
+👨🏼‍💻 A sleek & modern looking portfolio website using HTML, CSS & JavaScript.
 
 ---
 
