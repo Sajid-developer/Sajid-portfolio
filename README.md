@@ -1,2 +1,2 @@
-# sajid-portfolio
+# Sajid-portfolio
 👨🏼‍💻 My portfolio website using HTML, CSS &amp; JavaScript.
